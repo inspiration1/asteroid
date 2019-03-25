@@ -11,7 +11,7 @@
       <Card :bordered="false" style="background: rgba(0,0,0,.2);">
         <div class="form-con">
           <login-form @on-success-valid="handleSubmit"></login-form>
-          <p class="login-tip">输入任意用户名和密码即可</p>
+          <p class="login-tip">输入任意密码即可</p>
         </div>
       </Card>
     </div>
