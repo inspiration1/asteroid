@@ -53,8 +53,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-// import Verbal from './Verbal'
-// import SelfUpload from '@/views/mail/mail-home/components/write-mail/self-upload'
+
 export default {
   name: 'ChatBox',
   props: {

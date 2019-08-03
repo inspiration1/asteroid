@@ -23,8 +23,11 @@
           </Row>
         </Card>
       </i-col>
-      <Modal v-draggable="options" v-model="modalVisible">
+      <!-- <Modal v-draggable="options" v-model="modalVisible">
         拖动这里即可拖动整个弹窗
+      </Modal> -->
+      <Modal draggable title="Modal 1" v-model="modalVisible">
+        可拖动弹窗
       </Modal>
     </Row>
     <Row style="margin-top: 10px;">
@@ -59,9 +62,6 @@
           </Row>
         </Card>
       </i-col>
-      <Modal v-draggable="options" v-model="modalVisible">
-        拖动这里即可拖动整个弹窗
-      </Modal>
     </Row>
   </div>
 </template>

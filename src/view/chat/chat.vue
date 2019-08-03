@@ -177,8 +177,8 @@ export default {
 
     // 主动发送消息会话列表顺序改变
     handleSendMessage (val) {
+      this.currentConversation.updateTime = val
       if (this.currentConversationIndex !== 0) {
-        this.currentConversation.updateTime = val
         this.conversationList.splice(this.currentConversationIndex, 1)
         this.conversationList = [this.currentConversation, ...this.conversationList]
         this.currentConversationIndex = 0
