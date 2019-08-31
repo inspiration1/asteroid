@@ -9,11 +9,11 @@
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      }"
+        }"
       :buttonText="buttonText"
       :plugins="calendarPlugins"
       :weekends="calendarWeekends"
-      :events="calendarEvents"
+      :events="getCalendarEvents"
       :eventLimit="true"
       eventLimitText="更多"
       @dateClick="handleDateClick"
@@ -57,6 +57,16 @@ export default {
     }
   },
   methods: {
+    getCalendarEvents (info, successCallback, failureCallback) {
+      let events = [
+        ...this.calendarEvents,
+        {
+          title: info.startStr,
+          start: info.start.valueOf()
+        }
+      ]
+      successCallback(events)
+    },
     toggleWeekends () {
       this.calendarWeekends = !this.calendarWeekends // update a property
     },
