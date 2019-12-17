@@ -43,8 +43,8 @@ export default (codemirror) => {
       if (isEmpty(cm)) setPlaceholder(cm)
     }
     function onChange (cm) {
-      let wrapper = cm.getWrapperElement()
-      let empty = isEmpty(cm)
+      const wrapper = cm.getWrapperElement()
+      const empty = isEmpty(cm)
       wrapper.className = wrapper.className.replace(' CodeMirror-empty', '') + (empty ? ' CodeMirror-empty' : '')
 
       if (empty) setPlaceholder(cm)

@@ -31,7 +31,7 @@ export default {
       action: '完成交易',
       pv: 8000
     }] // 漏斗数据
-    let dv = new View().source(data)
+    const dv = new View().source(data)
     dv.transform({
       type: 'map',
       callback: function callback (row) {
@@ -40,7 +40,7 @@ export default {
       }
     })
     data = dv.rows
-    let chart = new G2.Chart({
+    const chart = new G2.Chart({
       container: 'funnelNode',
       forceFit: true,
       height: 400,

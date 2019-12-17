@@ -60,7 +60,7 @@ export default {
     },
     loadData (item, callback) {
       setTimeout(() => {
-        let data = [
+        const data = [
           {
             id: 111,
             title: '1-1-1'

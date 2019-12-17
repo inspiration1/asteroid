@@ -124,7 +124,7 @@ export default {
       }
     },
     transformValue (val) {
-      let len = this.unit.length
+      const len = this.unit.length
       let res = {
         endVal: 0,
         unitText: ''
@@ -141,7 +141,7 @@ export default {
     getValue (val) {
       let res = 0
       if (this.simplify) {
-        let { endVal, unitText } = this.transformValue(val)
+        const { endVal, unitText } = this.transformValue(val)
         this.unitText = unitText
         res = endVal
       } else {
@@ -152,7 +152,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      let endVal = this.getValue(this.end)
+      const endVal = this.getValue(this.end)
       this.counter = new CountUp(this.counterId, this.startVal, endVal, this.decimals, this.duration, {
         useEasing: !this.uneasing,
         useGrouping: this.useGroup,
@@ -166,7 +166,7 @@ export default {
   },
   watch: {
     end (newVal) {
-      let endVal = this.getValue(newVal)
+      const endVal = this.getValue(newVal)
       this.counter.update(endVal)
     }
   }

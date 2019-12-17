@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleFullscreen () {
-      let main = document.body
+      const main = document.body
       if (this.value) {
         if (document.exitFullscreen) {
           document.exitFullscreen()

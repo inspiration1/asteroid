@@ -21,6 +21,6 @@ import mixin from './mixin'
 import itemMixin from './item-mixin'
 export default {
   name: 'SideMenuItem',
-  mixins: [ mixin, itemMixin ]
+  mixins: [mixin, itemMixin]
 }
 </script>

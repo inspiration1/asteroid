@@ -56,7 +56,7 @@ export default {
   watch: {
     data (newData, oldVal) {
       this.updateFlagDic(newData)
-      let selectArray = []
+      const selectArray = []
       this.selectedArray.forEach(id => {
         if (id in this.flatDic) selectArray.push(id)
       })
@@ -85,7 +85,7 @@ export default {
       })
     },
     updateFlagDic (newData) {
-      let newFlagDic = {}
+      const newFlagDic = {}
       this.setFlagDic(newData, item => {
         newFlagDic[item.id] = item
       })

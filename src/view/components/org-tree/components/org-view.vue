@@ -119,7 +119,7 @@ export default {
       )
     },
     contextmenu (data, $event) {
-      let event = $event || window.event
+      const event = $event || window.event
       event.preventDefault
         ? event.preventDefault()
         : (event.returnValue = false)

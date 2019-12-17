@@ -80,7 +80,7 @@ export default {
       this.backTop = this.containerEle.scrollTop >= this.height
     },
     back () {
-      let target = typeof this.container === 'string' ? this.containerEle : (document.documentElement || document.body)
+      const target = typeof this.container === 'string' ? this.containerEle : (document.documentElement || document.body)
       const sTop = target.scrollTop
       scrollTop(this.containerEle, sTop, 0, this.duration)
       this.$emit('on-click')

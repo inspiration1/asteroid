@@ -33,7 +33,7 @@ export default {
   methods: {
     addEvents () {
       this.editor.codemirror.on('change', () => {
-        let value = this.editor.value()
+        const value = this.editor.value()
         if (this.localCache) localStorage.markdownContent = value
         this.$emit('input', value)
         this.$emit('on-change', value)
@@ -55,7 +55,7 @@ export default {
      * https://codemirror.net/doc/manual.html#events
      */
     this.addEvents()
-    let content = localStorage.markdownContent
+    const content = localStorage.markdownContent
     if (content) this.editor.value(content)
   }
 }

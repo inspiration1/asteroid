@@ -94,11 +94,10 @@ export default {
   methods: {
     scrollToBottom () {
       this.$nextTick(() => {
-        let div = document.getElementById('scroll_loader_container')
+        const div = document.getElementById('scroll_loader_container')
         div.scrollTop = div.scrollHeight
       })
     },
-    // 发送
     sendMessage () {
       document.onkeydown = function (e) {
         if (e.keyCode === 13) {
@@ -106,8 +105,8 @@ export default {
           return false
         }
       }
-      if (!this.sendLoading) { // 不是正在发送中
-        if (this.inputMessage.replace(/(^\s*)|(\s*$)/g, '') !== '') { // 发送内容不为空和空格
+      if (!this.sendLoading) {
+        if (this.inputMessage.replace(/(^\s*)|(\s*$)/g, '') !== '') {
           this.sendLoading = true
           setTimeout(() => {
             this.messageList.push({
@@ -142,8 +141,8 @@ export default {
       this.inputMessage = ''
       val.forEach(item => {
         if (item.messageType === 'file') {
-          let url = decodeURI(item.attachmentsUrl)
-          let tempArr = url.split('?')[0].split('/')
+          const url = decodeURI(item.attachmentsUrl)
+          const tempArr = url.split('?')[0].split('/')
           item.attachmentName = tempArr[tempArr.length - 1]
         }
       })

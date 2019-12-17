@@ -104,7 +104,7 @@ export default {
       console.log(ev)
       console.log(chart)
       if (ev.data) {
-        alert(ev.data._origin['action'])
+        alert(ev.data._origin.action)
       }
     }
     // handleLegendClick (ev, chart) {

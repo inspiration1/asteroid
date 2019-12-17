@@ -26,8 +26,8 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      let legend = this.value.map(_ => _.name)
-      let option = {
+      const legend = this.value.map(_ => _.name)
+      const option = {
         title: {
           text: this.text,
           subtext: this.subtext,

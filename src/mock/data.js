@@ -5,7 +5,7 @@ import { treeData } from './data/tree-select'
 const Random = Mock.Random
 
 export const getTableData = req => {
-  let tableData = []
+  const tableData = []
   doCustomTimes(5, () => {
     tableData.push(Mock.mock({
       name: '@name',
@@ -17,7 +17,7 @@ export const getTableData = req => {
 }
 
 export const getDragList = req => {
-  let dragList = []
+  const dragList = []
   doCustomTimes(5, () => {
     dragList.push(Mock.mock({
       name: Random.csentence(10, 13),

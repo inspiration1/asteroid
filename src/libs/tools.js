@@ -1,9 +1,9 @@
 export const forEach = (arr, fn) => {
   if (!arr.length || !fn) return
   let i = -1
-  let len = arr.length
+  const len = arr.length
   while (++i < len) {
-    let item = arr[i]
+    const item = arr[i]
     fn(item, i, arr)
   }
 }
@@ -14,9 +14,9 @@ export const forEach = (arr, fn) => {
  * @description 得到两个数组的交集, 两个数组的元素为数值或字符串
  */
 export const getIntersection = (arr1, arr2) => {
-  let len = Math.min(arr1.length, arr2.length)
+  const len = Math.min(arr1.length, arr2.length)
   let i = -1
-  let res = []
+  const res = []
   while (++i < len) {
     const item = arr2[i]
     if (arr1.indexOf(item) > -1) res.push(item)
@@ -195,7 +195,7 @@ export const off = (function () {
 export const hasKey = (obj, key) => {
   if (key) return key in obj
   else {
-    let keysArr = Object.keys(obj)
+    const keysArr = Object.keys(obj)
     return keysArr.length
   }
 }

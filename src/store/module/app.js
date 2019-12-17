@@ -51,22 +51,22 @@ export default {
         tagList = [...list]
       } else tagList = getTagNavListFromLocalstorage() || []
       if (tagList[0] && tagList[0].name !== homeName) tagList.shift()
-      let homeTagIndex = tagList.findIndex(item => item.name === homeName)
+      const homeTagIndex = tagList.findIndex(item => item.name === homeName)
       if (homeTagIndex > 0) {
-        let homeTag = tagList.splice(homeTagIndex, 1)[0]
+        const homeTag = tagList.splice(homeTagIndex, 1)[0]
         tagList.unshift(homeTag)
       }
       state.tagNavList = tagList
       setTagNavListInLocalstorage([...tagList])
     },
     closeTag (state, route) {
-      let tag = state.tagNavList.filter(item => routeEqual(item, route))
+      const tag = state.tagNavList.filter(item => routeEqual(item, route))
       route = tag[0] ? tag[0] : null
       if (!route) return
       closePage(state, route)
     },
     addTag (state, { route, type = 'unshift' }) {
-      let router = getRouteTitleHandled(route)
+      const router = getRouteTitleHandled(route)
       if (!routeHasExist(state.tagNavList, router)) {
         if (type === 'push') state.tagNavList.push(router)
         else {
@@ -91,7 +91,7 @@ export default {
     addErrorLog ({ commit, rootState }, info) {
       if (!window.location.href.includes('error_logger_page')) commit('setHasReadErrorLoggerStatus', false)
       const { user: { token, userId, userName } } = rootState
-      let data = {
+      const data = {
         ...info,
         time: Date.parse(new Date()),
         token,

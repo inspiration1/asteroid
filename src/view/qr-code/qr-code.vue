@@ -16,14 +16,14 @@ export default {
     }
   },
   mounted () {
-    let card = `BEGIN:VCARD
+    const card = `BEGIN:VCARD
                     VERSION:4.0
                     N:Zoe
                     TITLE:前端开发工程师
                     TEL;WORK;VOICE:111111111
                     EMAIL:gt81@foxmail.com
                 END:VCARD`
-    let qrcode = new QRCode('qrcode', {
+    const qrcode = new QRCode('qrcode', {
       text: card,
       width: 256,
       height: 256,

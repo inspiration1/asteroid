@@ -30,7 +30,7 @@ import 'tinymce/plugins/fullscreen'
 export default {
   name: 'TinymceEditor',
   components: {
-    'editor': Editor
+    editor: Editor
   },
   data () {
     return {
@@ -42,7 +42,7 @@ export default {
   methods: {
     // 插入图片至编辑器
     insertImage (res, file) {
-      let src = '' // 图片存储地址
+      const src = '' // 图片存储地址
       tinymce.execCommand('mceInsertContent', false, `<img src=${src}>`)
     }
   },
@@ -50,7 +50,7 @@ export default {
     const that = this
     this.tinymceInit = {
       skin_url: '/tinymce/skins/ui/oxide',
-      language_url: `/tinymce/langs/zh_CN.js`,
+      language_url: '/tinymce/langs/zh_CN.js',
       language: 'zh_CN',
       height: document.body.offsetHeight - 300,
       browser_spellcheck: true, // 拼写检查
@@ -71,7 +71,7 @@ export default {
           tooltip: '插入图片',
           icon: 'image',
           onAction: () => {
-            let upload = that.$refs.imageUpload
+            const upload = that.$refs.imageUpload
             upload.handleClick()
           }
         })
