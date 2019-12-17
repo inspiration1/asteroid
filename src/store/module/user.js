@@ -155,7 +155,7 @@ export default {
     // 根据当前点击的消息的id获取内容
     getContentByMsgId ({ state, commit }, { msg_id }) {
       return new Promise((resolve, reject) => {
-        let contentItem = state.messageContentStore[msg_id]
+        const contentItem = state.messageContentStore[msg_id]
         if (contentItem) {
           resolve(contentItem)
         } else {

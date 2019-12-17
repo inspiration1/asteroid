@@ -3,7 +3,7 @@ import { doCustomTimes } from '@/libs/util'
 const Random = Mock.Random
 
 export const getMessageInit = () => {
-  let unreadList = []
+  const unreadList = []
   doCustomTimes(3, () => {
     unreadList.push(Mock.mock({
       title: Random.cword(10, 15),
@@ -11,7 +11,7 @@ export const getMessageInit = () => {
       msg_id: Random.increment(100)
     }))
   })
-  let readedList = []
+  const readedList = []
   doCustomTimes(4, () => {
     readedList.push(Mock.mock({
       title: Random.cword(10, 15),
@@ -19,7 +19,7 @@ export const getMessageInit = () => {
       msg_id: Random.increment(100)
     }))
   })
-  let trashList = []
+  const trashList = []
   doCustomTimes(2, () => {
     trashList.push(Mock.mock({
       title: Random.cword(10, 15),

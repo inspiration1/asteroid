@@ -39,16 +39,16 @@
 </template>
 <script>
 import SideMenuItem from './side-menu-item.vue'
-import CollapsedMenu from './collapsed-menu.vue'
+// import CollapsedMenu from './collapsed-menu.vue'
 import { getUnion } from '@/libs/tools'
 import mixin from './mixin'
 
 export default {
   name: 'SideMenu',
-  mixins: [ mixin ],
+  mixins: [mixin],
   components: {
-    SideMenuItem,
-    CollapsedMenu
+    SideMenuItem
+    // CollapsedMenu
   },
   props: {
     menuList: {

@@ -16,7 +16,7 @@ import { findNodeUpperByClasses } from '@/libs/util'
 
 export default {
   name: 'CollapsedMenu',
-  mixins: [ mixin, itemMixin ],
+  mixins: [mixin, itemMixin],
   props: {
     hideTitle: {
       type: Boolean,
@@ -44,7 +44,7 @@ export default {
     }
   },
   mounted () {
-    let dropdown = findNodeUpperByClasses(this.$refs.dropdown.$el, ['ivu-select-dropdown', 'ivu-dropdown-transfer'])
+    const dropdown = findNodeUpperByClasses(this.$refs.dropdown.$el, ['ivu-select-dropdown', 'ivu-dropdown-transfer'])
     if (dropdown) dropdown.style.overflow = 'visible'
   }
 }

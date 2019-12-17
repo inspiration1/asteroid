@@ -51,7 +51,7 @@ export default {
           desc: `您的第${this.errorIndex + 1}行数据不规范，请修改`
         })
       } else {
-        let { columns, tableData } = getTableDataFromArray(this.pasteDataArr)
+        const { columns, tableData } = getTableDataFromArray(this.pasteDataArr)
         this.columns = columns
         this.tableData = tableData
       }

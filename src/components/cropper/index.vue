@@ -128,7 +128,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      let dom = document.getElementById(this.imgId)
+      const dom = document.getElementById(this.imgId)
       this.cropper = new Cropper(dom, {
         preview: `#${this.previewId}`,
         checkCrossOrigin: true

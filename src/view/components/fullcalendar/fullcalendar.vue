@@ -1,7 +1,6 @@
 <template>
-  <div class='demo-app'>
+  <div>
     <FullCalendar
-      class='demo-app-calendar'
       ref="fullCalendar"
       defaultView="dayGridMonth"
       locale="zh-cn"
@@ -9,7 +8,7 @@
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-        }"
+      }"
       :buttonText="buttonText"
       :plugins="calendarPlugins"
       :weekends="calendarWeekends"
@@ -27,10 +26,11 @@ import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
+
 export default {
   name: 'fullcalendar_page',
   components: {
-    FullCalendar // make the <FullCalendar> tag available
+    FullCalendar
   },
   data () {
     return {
@@ -53,12 +53,13 @@ export default {
           start: new Date(),
           color: '#A61000'
         }
-      ]
+      ],
+      calendarApi: null
     }
   },
   methods: {
     getCalendarEvents (info, successCallback, failureCallback) {
-      let events = [
+      const events = [
         ...this.calendarEvents,
         {
           title: info.startStr,
@@ -71,8 +72,7 @@ export default {
       this.calendarWeekends = !this.calendarWeekends // update a property
     },
     gotoPast () {
-      let calendarApi = this.$refs.fullCalendar.getApi() // from the ref="..."
-      calendarApi.gotoDate('2019-08-01') // call a method on the Calendar object
+      this.calendarApi.gotoDate('2019-08-01') // call a method on the Calendar object
     },
     handleDateClick (arg) {
       if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
@@ -82,10 +82,14 @@ export default {
           allDay: arg.allDay
         })
       }
+      this.calendarApi.refetchEvents()
     },
     handleEventClick (info) {
       alert('Event: ' + info.event.title)
     }
+  },
+  mounted () {
+    this.calendarApi = this.$refs.fullCalendar.getApi()
   }
 }
 </script>
@@ -96,12 +100,4 @@ export default {
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 @import '~@fullcalendar/timegrid/main.css';
-.demo-app {
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 14px;
-}
-.demo-app-calendar {
-  margin: 0 auto;
-  max-width: 900px;
-}
 </style>

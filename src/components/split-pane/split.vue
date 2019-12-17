@@ -94,7 +94,7 @@ export default {
       return parseFloat(numerator) / parseFloat(denominator)
     },
     getComputedThresholdValue (type) {
-      let size = this.$refs.outerWrapper[this.offsetSize]
+      const size = this.$refs.outerWrapper[this.offsetSize]
       if (this.valueIsPx) return typeof this[type] === 'string' ? this[type] : size * this[type]
       else return typeof this[type] === 'string' ? this.px2percent(this[type], size) : this[type]
     },
@@ -113,11 +113,11 @@ export default {
       return res
     },
     handleMove (e) {
-      let pageOffset = this.isHorizontal ? e.pageX : e.pageY
-      let offset = pageOffset - this.initOffset
-      let outerWidth = this.$refs.outerWrapper[this.offsetSize]
+      const pageOffset = this.isHorizontal ? e.pageX : e.pageY
+      const offset = pageOffset - this.initOffset
+      const outerWidth = this.$refs.outerWrapper[this.offsetSize]
       let value = this.valueIsPx ? `${parseFloat(this.oldOffset) + offset}px` : (this.px2percent(outerWidth * this.oldOffset + offset, outerWidth))
-      let anotherValue = this.getAnotherOffset(value)
+      const anotherValue = this.getAnotherOffset(value)
       if (parseFloat(value) <= parseFloat(this.computedMin)) value = this.getMax(value, this.computedMin)
       if (parseFloat(anotherValue) <= parseFloat(this.computedMax)) value = this.getAnotherOffset(this.getMax(anotherValue, this.computedMax))
       e.atMin = this.value === this.computedMin
