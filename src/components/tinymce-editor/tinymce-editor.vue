@@ -16,7 +16,7 @@
 </template>
 <script>
 import tinymce from 'tinymce/tinymce'
-import 'tinymce/themes/silver/theme'
+import 'tinymce/themes/silver'
 import Editor from '@tinymce/tinymce-vue'
 
 import 'tinymce/plugins/textcolor'
@@ -34,6 +34,7 @@ export default {
   },
   data () {
     return {
+      publicPath: process.env.BASE_URL,
       tinymceFlag: 1,
       tinymceInit: {},
       content: '本地图片上传功能仅为演示，实际使用需要补全图片存储地址'
@@ -49,8 +50,9 @@ export default {
   created () {
     const that = this
     this.tinymceInit = {
-      skin_url: '/tinymce/skins/ui/oxide',
-      language_url: '/tinymce/langs/zh_CN.js',
+      skin_url: `${this.publicPath}tinymce/skins/ui/oxide`,
+      content_css: `${this.publicPath}tinymce/skins/content/default`,
+      language_url: `${this.publicPath}tinymce/langs/zh_CN.js`,
       language: 'zh_CN',
       height: document.body.offsetHeight - 300,
       browser_spellcheck: true, // 拼写检查
