@@ -4,7 +4,8 @@ A more comprehensive management system developed on the basis of iview-admin.
 这是一个基于iview-admin2.0开发的管理系统，修复了ivew-admin中的一些bug，修改了一下框架结构，并向其中加入了我自己的工具库，目前新增了日历组件、tinymce富文本编辑器组件、二维码示例、g2图表示例、聊天室示例，更多功能持续更新中。。。
 
 ## Introduction
-路由配置等可参考iview-admin2.0文档[https://lison16.github.io/iview-admin-doc/#/](https://lison16.github.io/iview-admin-doc/#/)，本项目完整文档正在整理中。。。
+
+点击查看项目文档[https://inspiration1.github.io/asteroid-doc/#/home](https://inspiration1.github.io/asteroid-doc/#/home)
 
 ### 登录
 
