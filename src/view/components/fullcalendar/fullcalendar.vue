@@ -81,8 +81,8 @@ export default {
           start: arg.date,
           allDay: arg.allDay
         })
+        this.calendarApi.refetchEvents()
       }
-      this.calendarApi.refetchEvents()
     },
     handleEventClick (info) {
       alert('Event: ' + info.event.title)

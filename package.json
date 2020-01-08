@@ -1,6 +1,6 @@
 {
   "name": "asteroid",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "private": false,
   "author": "Zoe<gt81@foxmail.com>",
   "scripts": {
@@ -27,8 +27,6 @@
     "dayjs": "^1.7.7",
     "echarts": "^4.0.4",
     "html2canvas": "^1.0.0-alpha.12",
-    "iview": "^3.5.3",
-    "iview-area": "^1.6.0",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",
     "moment": "^2.24.0",
@@ -38,6 +36,7 @@
     "tinymce": "^5.1.2",
     "tree-table-vue": "^1.1.0",
     "v-org-tree": "^1.0.6",
+    "view-design": "^4.0.2",
     "viser-vue": "^2.4.5",
     "vue": "^2.6.10",
     "vue-i18n": "^8.15.1",
@@ -66,7 +65,7 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.5.0",
-    "mockjs": "^1.0.1-beta3",
+    "mockjs": "^1.1.0",
     "vue-template-compiler": "^2.5.13"
   },
   "browserslist": [

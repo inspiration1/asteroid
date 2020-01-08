@@ -4,7 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import iView from 'iview'
+
+import ViewUI from 'view-design'
+import 'view-design/dist/styles/iview.css'
+
 import Viser from 'viser-vue'
 
 import i18n from '@/locale'
@@ -21,7 +24,7 @@ import 'v-org-tree/dist/v-org-tree.css'
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock')
 
-Vue.use(iView, {
+Vue.use(ViewUI, {
   i18n: (key, value) => i18n.t(key, value)
 })
 Vue.use(Viser)

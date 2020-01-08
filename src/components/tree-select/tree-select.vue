@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Emitter from 'iview/src/mixins/emitter'
+import Emitter from 'view-design/src/mixins/emitter'
 import TreeSelectTreeItem from './tree-select-tree.vue'
 export default {
   name: 'TreeSelect',

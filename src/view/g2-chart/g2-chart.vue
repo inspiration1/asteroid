@@ -12,7 +12,7 @@
             </Card>
         </Col>
     </Row>
-    <p>G2官网：<a href="http://antv.alipay.com/zh-cn/g2/3.x/index.html" target="_blank">http://antv.alipay.com/zh-cn/g2/3.x/index.html</a></p>
+    <p>G2官网：<a href="https://g2.antv.vision/zh" target="_blank">https://g2.antv.vision/zh</a></p>
     <p>遇到的问题及解决方案：<a href="https://segmentfault.com/a/1190000018567839" target="_blank">https://segmentfault.com/a/1190000018567839</a></p>
 </div>
 </template>
