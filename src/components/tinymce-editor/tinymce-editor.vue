@@ -17,6 +17,7 @@
 <script>
 import tinymce from 'tinymce/tinymce'
 import 'tinymce/themes/silver'
+import 'tinymce/icons/default'
 import Editor from '@tinymce/tinymce-vue'
 
 import 'tinymce/plugins/textcolor'
