@@ -227,15 +227,15 @@ export default [
         },
         component: parentView,
         children: [
-          {
-            path: 'editor_page',
-            name: 'editor_page',
-            meta: {
-              icon: 'ios-create',
-              title: 'wangEditor'
-            },
-            component: () => import('@/view/components/editor/editor.vue')
-          },
+          // {
+          //   path: 'editor_page',
+          //   name: 'editor_page',
+          //   meta: {
+          //     icon: 'ios-create',
+          //     title: 'wangEditor'
+          //   },
+          //   component: () => import('@/view/components/editor/editor.vue')
+          // },
           {
             path: 'tinymce_page',
             name: 'tinymce_page',
